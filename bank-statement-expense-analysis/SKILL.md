@@ -55,7 +55,7 @@ Checklist before you continue:
 
 1. **Every account says VERIFIED.** This means each row satisfied `previous balance - debit + credit = balance`. If an account says NOT VERIFIED, read "When extraction fails" below. Do not continue silently.
 2. **Totals match the statement.** If the statement prints its own summary (debit count, credit count, total debits, total credits, closing balance), compare them with the script's numbers. They must be equal.
-3. **Note the date range of each account.** If accounts cover different dates, the days covered by only some accounts are incomplete. You must tell the user this.
+3. **Note the date range of each account.** If accounts cover different dates, the days covered by only some accounts are incomplete. You must tell the user this. If a statement's cover page shows a later balance than its last row, work out the gap and report it as unseen.
 4. **Several files for one account are merged automatically** and overlapping rows are dropped. Check the merged row count looks sensible.
 
 ### When extraction fails
@@ -243,7 +243,7 @@ Keep the chat reply short. Use the `TOTALS` line that `build_report.py` printed.
 4. Any coverage gap (accounts ending on different dates, unverified accounts, card spending not included).
 5. The questions still open.
 
-If the user answers more questions later, add overrides, re-run Steps 5 to 7, and say which numbers changed. If you correct a number you gave earlier, say so plainly.
+If the user answers more questions later, add overrides, re-run Steps 5 to 7, and say which numbers changed. If you correct a number you gave earlier, say so plainly. Keep `overrides.json`: offer to reuse the confirmed payees next time so the user is not asked twice.
 
 ## Checklist before you send anything
 
