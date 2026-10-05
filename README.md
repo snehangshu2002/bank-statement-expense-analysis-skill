@@ -36,14 +36,22 @@ python3 scripts/build_report.py classified.json -o report.html
 
 ## Install
 
-**Claude apps:** zip the `bank-statement-expense-analysis` folder on its own and add it as a custom skill. The steps are in Anthropic's help centre at https://support.claude.com (search for "skills").
+The folder follows the open [Agent Skills](https://agentskills.io) format (`SKILL.md` plus optional scripts), so it is not tied to Claude. Any agent that supports that format and can run Python should be able to use it. The [client list](https://agentskills.io/clients) names the products that support the format and links to each one's setup instructions.
 
-**Claude Code:** copy the folder into your skills directory.
+In every case you install the same thing: the whole `bank-statement-expense-analysis` folder, copied into the place your agent reads skills from.
 
 ```bash
 git clone https://github.com/snehangshu2002/bank-statement-expense-analysis-skill.git
-cp -r bank-statement-expense-analysis-skill/bank-statement-expense-analysis ~/.claude/skills/
+# then copy bank-statement-expense-analysis/ into your agent's skills folder
 ```
+
+- **Claude Code:** `cp -r bank-statement-expense-analysis-skill/bank-statement-expense-analysis ~/.claude/skills/`
+- **Claude apps:** zip the `bank-statement-expense-analysis` folder on its own and add it as a custom skill (see https://support.claude.com, search for "skills").
+- **Codex, Gemini CLI, Cursor, GitHub Copilot / VS Code, OpenCode, Goose and others:** the skills folder differs per tool; follow that tool's link on the client list.
+
+Only Claude has been tested. On other agents the scripts behave the same, but how well the agent follows the steps depends on the agent and model.
+
+**No skills support?** Run the three scripts yourself (see above) and paste `SKILL.md` into the chat as instructions, or just use the scripts on their own.
 
 ## Use
 

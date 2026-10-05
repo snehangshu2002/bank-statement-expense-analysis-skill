@@ -1,6 +1,8 @@
 ---
 name: bank-statement-expense-analysis
 description: Use when the user shares bank statements (PDF/CSV/XLSX, any bank) and wants to know what came in, what went out and where it went, by month or income cycle, with clarifying questions and an HTML report.
+license: MIT
+compatibility: Needs a shell and Python 3 with pdfplumber and openpyxl. Works without network access when the scripts folder is installed with the skill.
 ---
 
 # Bank statement expense analysis
