@@ -17,7 +17,8 @@ It works for any account type: salaried, self-employed, business, freelance, pen
 
 ```
 bank-statement-expense-analysis/
-  SKILL.md                      step-by-step instructions, written so smaller models can follow them
+  SKILL.md                      six short steps (about 950 words), written so smaller models can follow them
+  reference.md                  classification rules and algorithms, read only when needed
   scripts/
     extract_statement.py        statements -> transactions.json (verified)
     analyze.py                  draft classification, questions to ask, overrides
